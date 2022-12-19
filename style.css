@@ -1,0 +1,157 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: white;
+}
+
+header{
+    width: 100%;
+    text-align: center;
+    margin-bottom:30px;
+
+}
+
+footer{
+    background: black;
+  color: white;
+    width: 100%;
+    margin-top:10px;
+    padding: 5px;
+}
+
+/* Flex Container/Resonsive Web Design Container */
+.container {
+    display: flex; /* Makes it a flex item */
+    flex-flow: column wrap; /* Display in a row, and wrap whatever items exceed length width */
+    
+    justify-content: space-around; /* Space will be distributed around content */
+    padding: 0; /* 0 padding.*/
+    margin: 0; /* 0 margin.*/
+    list-style: none; /* for list items, no decoration. */
+}
+
+/* Flex Item(Test) */
+.flex-item{
+    width: 100%;
+    background: lightcoral;
+    padding: 5px;
+    margin-top: 10px;
+    line-height: 150px;
+    color: rgb(46, 46, 46);
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+}
+
+/* Small IMG Class */
+.small-img{
+    display: block;
+    margin: auto;
+    padding: auto;
+    width: 10%;
+}
+
+/* Center Text */
+.cent-text{
+    text-align: center;
+}
+
+/* Left text */
+.left{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+
+
+}
+
+#myLinks{
+    content: " ";
+    display: none;
+}
+
+.container{
+   flex-flow:column wrap;
+   margin-top: 50px;
+}
+
+.flex-item::after{
+   content: "Mobile";
+}
+
+/* Sticky Navbar */
+.nav {
+   overflow: hidden;
+   background-color: black; /* myLinks cascade background */ 
+   position: fixed; 
+   top: 0;
+   left:0;
+   width: 100%;
+ }
+ 
+ .nav #myLinks {
+   display: none;
+ }
+ 
+ .nav a {
+   color: white;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-size: 17px;
+   display: block;
+ }
+ 
+ .nav a.icon {
+   background: black;
+   display: block;
+   position: absolute;
+   right: 0;
+   top: 0;
+ }
+ 
+ .nav a:hover {
+   background-color: #ddd;
+   color: black;
+ }
+ 
+ .active {
+   background-color: gold;
+   color: white;
+ }
+
+@media screen and (min-width: 800px) {
+    
+    .container{
+        
+        flex-flow:row wrap;
+    }
+
+    .flex-item {
+        width: 200px;
+        height: 150px;  
+        background: rgb(152, 46, 223);
+    }
+
+    .flex-item::after{
+        content: "Tablet";
+    }
+
+}
+
+@media screen and (min-width: 1000px) {
+    .container{
+        flex-flow: row wrap;
+    }
+
+    .flex-item {
+      width: 200px;
+      height: 150px;  
+      background: grey;
+    }
+
+    .flex-item::after{
+        content: "Desk";
+    }
+}
